@@ -18,6 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchUsers = async () => {
+      
       try {
         const response = await axios.get<User[]>('/api/users'); // Запрос на получение пользователей с помощью Axios
         setUsers(response.data); // Сохраняем пользователей в состояние
