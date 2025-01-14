@@ -3,20 +3,24 @@ resources
 https://app.insomnia.rest/app/dashboard/organizations
 
 
-Если вы открыли репозиторий для всех, но он всё ещё недоступен или задерживается, это может быть связано с несколькими причинами:
+Die Hauptstruktur einer Node.js-Anwendung ist modular und basiert auf dem Konzept von Modulen, Asynchronität und der Event-Loop. Hier ist eine typische Struktur, die als Ausgangspunkt für die meisten Node.js-Projekte dienen kann:
+1. Grundlegende Verzeichnisstruktur
 
-    Кэш GitHub:
-    Иногда изменения в настройках видимости репозитория (например, из приватного в публичный) могут занять несколько минут. Попробуйте подождать 5-10 минут и снова проверьте доступ.
+Eine typische Verzeichnisstruktur für eine Node.js-Anwendung sieht so aus:
 
-    Ссылка на репозиторий:
-    Убедитесь, что вы предоставили правильную ссылку. Проверьте ещё раз:
-    https://github.com/Maks-Mm/analyzer-666
-
-    Права доступа:
-    Если вы изменили видимость, но доступ всё ещё ограничен, убедитесь, что вы действительно сделали репозиторий публичным:
-        Перейдите в настройки репозитория → "General" → раздел "Repository visibility" → выберите "Public".
-
-    Соединение GitHub:
-    Проверьте интернет-соединение и убедитесь, что GitHub работает нормально. Вы можете проверить это на сайте GitHub Status.
-
-Если всё настроено правильно, а проблема всё равно остаётся, напишите — я помогу проверить. 🙂
+my-node-app/
+├── node_modules/       // Enthält installierte Abhängigkeiten
+├── public/             // Statische Dateien wie CSS, JavaScript, Bilder
+├── src/                // Hauptquellcode der Anwendung
+│   ├── controllers/    // Controller für die Anwendungslogik
+│   ├── models/         // Datenmodelle (z. B. für Datenbanken)
+│   ├── routes/         // API- oder Webrouten
+│   ├── services/       // Geschäftslogik oder Hilfsfunktionen
+│   ├── middlewares/    // Middleware-Funktionen
+│   └── app.js          // Hauptdatei für die Anwendungslogik
+├── tests/              // Unit- und Integrationstests
+├── .env                // Umgebungsvariablen
+├── .gitignore          // Dateien, die Git ignorieren soll
+├── package.json        // Metadaten und Abhängigkeiten der Anwendung
+├── package-lock.json   // Versionssperre für Abhängigkeiten
+└── README.md           // Projektbeschreibung
