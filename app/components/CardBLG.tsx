@@ -38,7 +38,7 @@ function Cards() {
             alt="Avatar of Jonathan Reinink"
           />
           <div className="text-sm">
-            <p className="text-gray-900 leading-none">Ivan Laurentio</p>
+            <p className="text-gray-900 leading-none">Ivan Laurentiu</p>
             <p className="text-gray-600">Aug 18</p>
           </div>
         </div>

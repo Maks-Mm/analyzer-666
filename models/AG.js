@@ -1,8 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const ArticleGeneralisationSchema = new mongoose.Schema({
-    content: String,
-    siteName: String,
+const ArticleGeneralizationsSchema = new mongoose.Schema({
+  content: String,
+  siteName: String,
 });
 
-export default mongoose.models.User || mongoose.model('User', UserSchema);
+export default mongoose.models.ArticleGeneralisation ||
+  mongoose.model("ArticleGeneralisation", ArticleGeneralizationsSchema);
