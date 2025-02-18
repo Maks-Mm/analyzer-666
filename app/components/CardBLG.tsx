@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 
 function Cards() {
   return (
@@ -6,7 +7,7 @@ function Cards() {
       <div
         className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
         style={{
-          backgroundImage: ` url('https://v1.tailwindcss.com/img/card-left.jpg')`,
+          backgroundImage: `url('https://v1.tailwindcss.com/img/card-left.jpg')`,
         }}
         title="Woman holding a mug"
       ></div>
@@ -32,10 +33,12 @@ function Cards() {
           </p>
         </div>
         <div className="flex items-center">
-          <img
+          <Image
             className="w-10 h-10 rounded-full mr-4"
             src="https://media.licdn.com/dms/image/v2/C4D03AQEiJ4zmOmEodw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1562914657387?e=2147483647&v=beta&t=FqlgffF8Z8GIs3h5AV0xQziiihC4Oz46SxDoe0qDLQc"
             alt="Avatar of Jonathan Reinink"
+            width={40} // Set width
+            height={40} // Set height
           />
           <div className="text-sm">
             <p className="text-gray-900 leading-none">Ivan Laurentiu</p>

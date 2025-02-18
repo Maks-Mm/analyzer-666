@@ -4,6 +4,12 @@ import CardBLG from "@/app/components/CardBLG";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+interface GeneralizationResponse {
+  _id: string;
+  content: string;
+  siteName: string;
+}
+
 // Определение типа для пользователя
 interface User {
   _id: string;
@@ -11,17 +17,22 @@ interface User {
   email: string;
 }
 
+/*
 interface Generalization {
   _id: string;
-  content: String;
-  siteName: String;
+  content: string;
+  siteName: string;
 }
+*/
 
 export default function Home() {
   const [users, setUsers] = useState<User[]>([]); // Состояние для хранения пользователей
   const [loading, setLoading] = useState<boolean>(true); // Состояние загрузки
   const [error, setError] = useState<string | null>(null); // Состояние для ошибок
-  const [generalizations, setGeneralizations] = useState<Generalization[]>([]);
+  //const [generalizations, setGeneralizations] = useState<Generalization[]>([]);
+  const [generalizations, setGeneralizations] = useState<
+    GeneralizationResponse[]
+  >([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -39,9 +50,9 @@ export default function Home() {
 
     const fetchGeneralization = async () => {
       try {
-        const response = await axios.get<any[]>("/api/generalizations");
+        const response = await axios.get<GeneralizationResponse[]>("/api/generalizations");
         setGeneralizations(response.data);
-        console.log(response.data,"token")
+        console.log(response.data, "token");
       } catch (error) {
         setError(
           error instanceof Error ? error.message : "Ошибка при загрузке"
@@ -63,7 +74,9 @@ export default function Home() {
         {error && <p className="text-red-500">{error}</p>}{" "}
         {/* Сообщение об ошибке */}
         {generalizations.length > 0 ? (
-          <div className="generalizations">{generalizations.map((g)=>g.content)}</div>
+          <div className="generalizations">
+            {generalizations.map((g) => g.content)}
+          </div>
         ) : (
           <div>not generalizations</div>
         )}
